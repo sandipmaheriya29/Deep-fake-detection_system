@@ -2,7 +2,7 @@ DEEP FAKE VIDEOS DETECTION
 
 - we will detect deep fake videos using deep learning algorithms like VGGFace(pretrianed model)
 
-  To run the project -
+ To run the project -
 1) create virtual environment in Linux 
 Command -   python3  -m  venv venv
 2)activate the virtual environment
