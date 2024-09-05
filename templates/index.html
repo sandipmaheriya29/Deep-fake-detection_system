@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Fake Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background: url("{{ url_for('static', filename='background.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .overlay {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text contrast */
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8); /* Slightly darker container */
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <div class="container">
+            <header>
+                <h1>Deep Fake Detection System</h1>
+                <p>Upload a video to check if it's real or fake.</p>
+            </header>
+            <form id="upload-form" enctype="multipart/form-data">
+                <input type="file" name="file" accept="video/*" required>
+                <button type="submit">Upload Video</button>
+            </form>
+            <div id="result"></div>
+        </div>
+    </div>
+    <!-- Loader -->
+    <div id="loader" class="loader" style="display: none;">
+        <img src="{{ url_for('static', filename='loader.jpg') }}" alt="Loading...">
+    </div>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
